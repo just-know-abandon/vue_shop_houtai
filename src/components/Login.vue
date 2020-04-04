@@ -64,12 +64,21 @@ export default {
     //   }
     // },
     open2 () {
-      this.$message({
-        message: '登录成功',
-        type: 'success',
-        duration: 2000
-      })
-      this.$router.push('/home')
+      // this.$message({
+      //   message: '登录成功',
+      //   type: 'success',
+      //   duration: 2000
+      // })
+      if (this.loginForm.username === 'admin' & this.loginForm.password === '123456') {
+        this.$message({
+          message: '登录成功',
+          type: 'success',
+          duration: 2000
+        })
+        this.$router.push('/home')
+      } else {
+        this.$message.error('登录失败')
+      }
     }
   }
 }
